@@ -1,6 +1,6 @@
 {
   "name": "@meza/jest-coverage-bumper",
-  "version": "0.1.0",
+  "version": "0.1.0-RC1",
   "main": "index.js",
   "repository": "git@github.com:meza/jest-coverage-bumper.git",
   "author": "meza <meza@meza.hu>",
