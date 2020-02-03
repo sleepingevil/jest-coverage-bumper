@@ -1,4 +1,4 @@
-#Automatically Increase your Jest Coverage Threshold
+# Automatically Increase your Jest Coverage Threshold
 
 This simple script is for projects that strive for good code coverage but they're not there yet.
 It makes sure that the package json has the highest ever number of coverage configured.
