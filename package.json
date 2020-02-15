@@ -7,7 +7,7 @@
   "license": "MIT",
   "private": false,
   "devDependencies": {
-    "yarn": "^1.21.1"
+    "yarn": "^1.22.0"
   },
   "dependencies": {
     "write-pkg": "^4.0.0"
