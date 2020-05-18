@@ -6,7 +6,11 @@
   "author": "meza <meza@meza.hu>",
   "license": "MIT",
   "private": false,
+  "scripts": {
+    "test": "jest --runInBand --coverage"
+  },
   "devDependencies": {
+    "jest": "^26.0.1",
     "yarn": "^1.21.1"
   },
   "dependencies": {

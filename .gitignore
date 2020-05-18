@@ -215,3 +215,5 @@ $RECYCLE.BIN/
 *.lnk
 
 # End of https://www.gitignore.io/api/intellij,linux,windows,mac,visualcode,eclipse,netbeans
+
+coverage

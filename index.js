@@ -16,7 +16,7 @@ module.exports = function (results) {
       'functions',
       'lines',
     ].forEach(key => {
-      const actualCovered = parseFloat(((actuals[key].covered / actuals[key].total) * 100).toFixed(2));
+      const actualCovered = parseFloat(Math.floor((actuals[key].covered / actuals[key].total) * 10000) / 100);
       const actualThreshold = Math.abs(thresholds[key]);
 
       if (actualCovered > actualThreshold) {
