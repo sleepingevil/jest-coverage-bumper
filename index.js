@@ -10,13 +10,21 @@ module.exports = function (results) {
   if (results.coverageMap) {
     const actuals = results.coverageMap.getCoverageSummary().toJSON();
     const thresholds = config.jest.coverageThreshold.global;
+    let decimals = config.jestCoverageBumper ? parseInt(config.jestCoverageBumper.decimals) : 2;
+
+    if (isNaN(decimals) || (decimals < 0) || (decimals > 10)) {
+      console.warn(`jest-coverage-bumper: Invalid precision: "${config.jestCoverageBumper.decimals}".\nFalling back to 2 decimals.\nThe precision must be between 0 and 10 decimals.\nPlease update package.json > jestCoverageBumper > decimals.`);
+      decimals = 2;
+    }
+
     [
       'statements',
       'branches',
       'functions',
       'lines',
     ].forEach(key => {
-      const actualCovered = parseFloat(Math.floor((actuals[key].covered / actuals[key].total) * 10000) / 100);
+      const multiplier = Math.pow(10, decimals);
+      const actualCovered = parseFloat(Math.floor((actuals[key].covered / actuals[key].total) * 100 * multiplier) / multiplier);
       const actualThreshold = Math.abs(thresholds[key]);
 
       if (actualCovered > actualThreshold) {
